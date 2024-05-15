@@ -289,7 +289,7 @@ var charactersData = {
 		{ name: 'Альбион', image: '/1.jpg', link: '/index.html' },
 	],
 	group4: [
-		{ name: 'Суруме', image: '/1.jpgchopper.jpg', link: 'characters/chopper.html' },
+		{ name: 'Суруме', image: '/1.jpg', link: 'characters/chopper.html' },
 		{ name: 'Вандер', image: '/1.jpg', link: '/index.html' },
 		{ name: 'Вадацуми', image: '/1.jpg', link: '/index.html' },
 		{ name: 'Анкоро', image: '/1.jpg', link: '/index.html' },
@@ -361,7 +361,7 @@ var charactersData = {
 		{ name: 'Тристан', image: '/1.jpg', link: '/index.html' },
 	],
 	group5: [
-		{ name: 'Джек', image: '/1.jpgJeck.jpg', link: 'characters/Jeck.html' },
+		{ name: 'Джек', image: '/1.jpg', link: 'characters/Jeck.html' },
 		{ name: 'Уибл', image: '/1.jpg', link: '/index.html' },
 		{ name: 'Баккин', image: '/1.jpg', link: '/index.html' },
 		{ name: 'Ванда', image: '/1.jpg', link: '/index.html' },
@@ -413,19 +413,19 @@ function changeGroup(group) {
 	charactersContainer.innerHTML = ''; // Очищаем контейнер перед добавлением новых карточек
 
 	// Перебираем персонажей выбранной группы и формируем HTML
-	charactersData[group].forEach(function(character) {
-		var cardHtml = `
-				<div class="col mb-4">
-					<div class="card text-bg-dark shadow-sm bg-body-tertiary position-relative overflow-hidden">
-							<img src="${character.image}" class="img-fluid object-fit-cover skake" style="height: 300px;" alt="...">
-							<div class="shake card-img-overlay d-flex align-items-end">
-								<a href="${character.link}"><p class="card-title card-black stretched-link text-danger-hover">${character.name}</p></a>
-							</div>
+charactersData[group].forEach(function(character) {
+	var cardHtml = `
+			<div class="col mb-4">
+				<div class="card shadow-sm">
+						<img src="${character.image}" class="img-fluid object-fit-cover rounded" style="height: 300px;" alt="...">
+						<div class="shake card-img-overlay d-flex align-items-end">
+							<a href="${character.link}"><p class="card-black rounded stretched-link text-danger-hover">${character.name}</p></a>
 						</div>
-				</div>
-		`;
+					</div>
+			</div>
+	`;
 
-	charactersContainer.innerHTML += cardHtml; // Добавляем каждую карточку в контейнер
+charactersContainer.innerHTML += cardHtml; // Добавляем каждую карточку в контейнер
 });
 }
 
